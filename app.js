@@ -10,7 +10,7 @@ var getCardRouter = require('./routes/get-card');
 var app = express();
 
 // view engine setup
-app.set('view engine', 'html');
+app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
