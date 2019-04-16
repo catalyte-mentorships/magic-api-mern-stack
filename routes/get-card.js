@@ -3,12 +3,18 @@ var router = express.Router();
 
 const mtg = require('mtgsdk')
 
-/* GET users listing. */
+/* GET cardResult */
 router.get('/', function(req, res, next) {
-	mtg.card.find(6)
-	.then(result => {
-		console.log(result.card.name)
-	})
+	const randomNumber = Math.floor(Math.random() * 5000) + 1; 
+	mtg.card.find(randomNumber)
+	.then(cardResult => {
+		res.json({
+			card: cardResult.card,
+		})
+	})		
+	.catch(err => res.status(404).json({
+		err: '404, Card not found'}
+	));
 });
 
 module.exports = router;
