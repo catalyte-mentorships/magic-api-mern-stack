@@ -5,6 +5,8 @@ const mtg = require('mtgsdk')
 
 /* GET cardResult */
 router.get('/', function(req, res, next) {
+	
+	//Gets random number between 1-5000
 	const randomNumber = Math.floor(Math.random() * 5000) + 1; 
 	mtg.card.find(randomNumber)
 	.then(cardResult => {
