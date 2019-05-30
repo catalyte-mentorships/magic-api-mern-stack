@@ -20,7 +20,7 @@
   "scripts": {
     "dev": "webpack --mode development",
     "prod": "webpack --mode production",
-    "webpack": "webpack",
+    "webpack": "webpack -w",
     "start": "npm run webpack && nodemon --exec babel-node -- bin/www",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -46,6 +46,7 @@
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.4.5",
     "babel-loader": "^8.0.6",
+    "eslint": "^5.16.0",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
   }
